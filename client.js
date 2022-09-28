@@ -7,6 +7,11 @@ const connect = module.exports = () => {
   });
 
   conn.setEncoding("utf8");
+  conn.on("connect", () => {
+    console.log("Connection Successful.");
+    conn.write("Name: FOO");
+  });
+
   conn.on("data", (data) => {
     console.log("Server message:", data);
   });
