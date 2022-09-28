@@ -1,10 +1,11 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
 
 const connect = module.exports = () => {
   return new Promise((resolve, reject) => {
     const conn = net.createConnection({
-      host: "165.227.47.243",
-      port: 50541
+      host: IP,
+      port: PORT
     });
 
     conn.setEncoding("utf8");
